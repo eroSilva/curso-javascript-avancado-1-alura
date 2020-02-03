@@ -14,7 +14,14 @@ class NegociacaoController {
     const formatedDate = arrDate.map((item, index) =>
       index === 1 ? item - 1 : item
     );
+    const negociacaoDate = new Date(...formatedDate);
 
-    let negociacao = new Negociacao(new Date(...formatedDate), 10, 1000);
+    let negociacao = new Negociacao(
+      negociacaoDate,
+      this._inputQuantidade.value,
+      this._inputValor.value
+    );
+
+    console.log(negociacao);
   }
 }
